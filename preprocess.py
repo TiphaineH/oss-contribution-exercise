@@ -53,10 +53,10 @@ def value_range(data):
 
     Returns
     -------
-    range : number
+(    range : number
         The distance between the lowest and the highest value of ``data``.
     """
-    return 0.0
+    return data.max() - data.min()
 
 
 def rescale(data, lower=0.0, upper=1.0):
@@ -80,7 +80,7 @@ def rescale(data, lower=0.0, upper=1.0):
     return np.array([lower, upper])
 
 
-def cut_to_same_size(data_1, data_2):
+def cut_to_same_size(data_1, data_2, cut_with=0.0):
     """
     Returns the two given arrays, cut so their length is the length of the
     shorter one, i.e. so that the two arrays have the same length.
